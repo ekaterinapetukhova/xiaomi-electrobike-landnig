@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:regular,700);
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #131313;
+    line-height: 17px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    margin-right: 70px;
+}
+.menu__list {
+    display: flex;
+    gap: 10px;
+}
+
+.menu__list-link {
+    text-transform: uppercase;
+    padding: 42px 20px;
+    transition: all 0.5s;
+}
+.menu__list-link:hover {
+    background-color: #131313;
+    color: white;
+}
+.bike__inner {
+    display: flex;
+    gap: 30px;
+}
+.bike__column:nth-child(1) {
+    margin-top: 170px;
+}
+.bike__column:nth-child(2) {
+    flex-basis: 630px;
+    margin-top: 97px;
+    max-width: 630px;
+}
+
+.bike__title {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+    margin-bottom: 5px;
+}
+.bike__sub-title {
+    color: #6f6f6f;
+    font-size: 32px;
+    line-height: 39px;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+.bike__text {
+    max-width: 420px;
+}
+.bike__text + .bike__text {
+    margin-top: 20px;
+}
+
+.bike__btn {
+    margin-top: 80px;
+    display: inline-block;
+    color: white;
+    padding: 28px 81px;
+    background-color: #131313;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 1.1em;
+    text-transform: uppercase;
+}
+.bike-slider {
+    position: relative;
+}
+
+.bike-slider .slick-dots {
+    position: absolute;
+    right: 0;
+    top: 53px;
+}
+
+.bike-slider .slick-dots li + li {
+    margin-top: 10px;
+}
+
+.bike-slider .slick-dots button {
+    font-size: 0;
+    border: none;
+    width: 2px;
+    height: 25px;
+    padding: 0;
+    background: #131313;
+}
+
+.bike-slider .slick-dots .slick-active button{
+    background: #FF4040;
+}
+
+.bike-slider__item {
+}
+.bike__list {
+}
+.bike__list-item {
+}
