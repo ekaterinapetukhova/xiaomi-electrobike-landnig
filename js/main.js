@@ -27,3 +27,7 @@ $('.bike__btn').on( 'click', function(){
   }
   return false;
 });
+
+$( window ).load(function() {
+  $(".footer__social").show();
+});

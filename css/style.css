@@ -390,14 +390,220 @@ body {
     text-transform: lowercase;
     text-decoration-line: underline;
 }
-.footer__social {
-    display: flex !important;
+.footer__social-list {
+    display: flex;
     gap: 28px;
 }
-.footer__social-link {
-
-}
 .footer__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
 }
+
 .footer__contacts-link {
+    position: relative;
+}
+
+.footer__contacts-link::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: -25%;
+    left: -20%;
+}
+
+.phone::before {
+    background-image: url("../images/phone.svg");
+}
+
+.mail::before {
+    background-image: url("../images/mail.svg");
+}
+
+/* Portrait tablets and medium desktops */
+@media all and (max-width: 1229px) {
+    .bike__inner {
+        flex-wrap: wrap;
+    }
+
+    .bike__text {
+        max-width: 100%;
+        text-align: justify;
+    }
+
+    .bike__btn {
+        margin-top: 30px;
+    }
+
+    .bike__column:nth-child(1) {
+        margin-top: 30px;
+    }
+
+    .bike__column:nth-child(2) {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .bike__sub-title {
+        margin-bottom: 30px;
+    }
+
+    .info__img {
+        display: none;
+    }
+
+    .info {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .info__list {
+        margin-left: 0;
+        flex-basis: 100%;
+    }
+
+    .info__item-text {
+        max-width: 100%;
+        text-align: justify;
+        margin-bottom: 25px;
+    }
+
+    .characteristic {
+        margin-bottom: 50px;
+    }
+
+    .characteristic__inner {
+        flex-wrap: wrap;
+    }
+
+    .characteristic__img {
+        order: -1;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .characteristic__items {
+        flex-basis: 100%;
+    }
+
+    .characteristic__line {
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .slider__item {
+        object-fit: cover;
+    }
+}
+
+/* Others */
+@media all and (max-width: 1140px) {
+    .form__bike {
+        top: 45px;
+    }
+    .form__bike-img {
+        width: 500px;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media all and (max-width: 991px) {
+    .menu {
+        margin-right: 0px;
+    }
+    .form__bike-img {
+        width: 400px;
+    }
+
+    .form__label-box{
+        margin-bottom: 250px;
+    }
+
+    .form__bike{
+        top: auto;
+        right: auto;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media all and (max-width: 767px) {
+}
+
+/* Others */
+@media all and (max-width: 640px) {
+    .header__inner {
+        display: block;
+        text-align: center;
+    }
+
+    .menu {
+        margin-top: 50px;
+    }
+
+    .menu__list {
+        justify-content: space-evenly;
+        gap: 0;
+    }
+
+    .menu__list-link {
+        padding: 20px 25px;
+    }
+
+    .bike__title {
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 57px;
+        margin-bottom: 5px;
+    }
+
+    .bike__sub-title {
+        font-size: 22px;
+        line-height: 29px;
+    }
+
+    .bike__list {
+        flex-wrap: wrap;
+    }
+    .bike__list-item {
+        flex-basis: 50%;
+    }
+}
+
+/* Landscape phones and smaller */
+@media all and (max-width: 460px) {
+    .menu__list {
+        justify-content: space-between;
+    }
+    .menu {
+        margin-top: 30px;
+    }
+    .menu__list-link {
+        padding: 20px 5px;
+    }
+
+    .bike__inner {
+        gap: 0;
+    }
+
+    .bike__text {
+        text-align: justify;
+    }
+
+    .bike__btn-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bike__btn {
+        padding: 21px 35px;
+        letter-spacing: 0.8em;
+    }
+}
+
+/* Others */
+@media all and (max-width: 350px) {
+    .menu__list-link {
+        font-size: 12px;
+    }
 }
