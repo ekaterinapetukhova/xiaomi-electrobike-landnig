@@ -16,7 +16,7 @@ $(function () {
   });
 });
 
-$('.bike__btn').on( 'click', function(){ 
+$('.menu__list-link, .bike__btn').on( 'click', function(){ 
   var el = $(this);
   var dest = el.attr('href');
   if(dest !== undefined && dest !== '') {
@@ -28,6 +28,3 @@ $('.bike__btn').on( 'click', function(){
   return false;
 });
 
-$( window ).load(function() {
-  $(".footer__social").show();
-});
