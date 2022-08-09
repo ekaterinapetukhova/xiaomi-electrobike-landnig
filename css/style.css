@@ -512,17 +512,52 @@ body {
     .menu {
         margin-right: 0px;
     }
+
+    .price__inner{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .form__text{
+        width: 100%;
+    }
+
     .form__bike-img {
         width: 400px;
     }
 
     .form__label-box{
-        margin-bottom: 250px;
+        justify-content: center;
     }
 
-    .form__bike{
+    .form__label-box {
+        margin-bottom: 270px;
+    }
+
+    .form__bike {
         top: auto;
-        right: auto;
+        right: 0;
+        left: 0;
+        bottom: 85px;
+    }
+
+    .form__bike-price {
+        transform: translate(100%, 5%);
+        font-size: 16px;
+        line-height: 20px;
+        border: none;
+        border-radius: 0;
+        /* transform: translate(-30%, 25%); */
+    }
+
+    .form__bike-price::after{
+        display: none;
+    }
+
+    .form__bike-price span {
+        background-color: #131313;
+        color: white;
     }
 }
 
@@ -568,6 +603,41 @@ body {
     .bike__list-item {
         flex-basis: 50%;
     }
+
+    .footer__inner{
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        height: auto;
+    }
+
+    .footer__link{
+        margin-top: 10px;
+    }
+
+    .phone::before{
+        left: -5%;
+    }
+}
+/* Others */
+@media all and (max-width: 540px) {
+    .form__bike-price {
+        font-size: 16px;
+        line-height: 20px;
+        border: none;
+        border-radius: 0;
+        transform: translate(-30%, 25%);
+    }
+
+    .form__bike-price::after{
+        display: none;
+    }
+
+    .form__bike-price span {
+        background-color: #131313;
+        color: white;
+    }
+
 }
 
 /* Landscape phones and smaller */
@@ -599,11 +669,30 @@ body {
         padding: 21px 35px;
         letter-spacing: 0.8em;
     }
+
+    .form {
+        width: 100%;
+    }
+
+    .form__btn {
+        padding: 21px 35px;
+        letter-spacing: 0.8em;
+    }
+
+    .form__bike-img {
+        width: 350px;
+    }
+
+
 }
 
 /* Others */
-@media all and (max-width: 350px) {
+@media all and (max-width: 360px) {
     .menu__list-link {
         font-size: 12px;
+    }
+
+    .form__bike-img{
+        width: 300px;
     }
 }
