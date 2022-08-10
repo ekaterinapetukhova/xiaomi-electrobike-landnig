@@ -1,36 +1,11 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/slick.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__inner">
-          <a href="#" class="logo">
-            <img src="images/logo.jpg" alt="" class="logo__img" />
-          </a>
-          <nav class="menu">
-            <ul class="menu__list">
-              <li class="menu__list-item">
-                <a href="#" class="menu__list-link">Описание</a>
-              </li>
-              <li class="menu__list-item">
-                <a href="#" class="menu__list-link">Характеристики</a>
-              </li>
-              <li class="menu__list-item">
-                <a href="#" class="menu__list-link">Cтоимость</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+<?php
+/*
+Template Name: Home
+*/
+?>
+
+<?php get_header();?>
+
     <section class="bike">
       <div class="container">
         <div class="bike__inner">
@@ -56,10 +31,33 @@
           </div>
           <div class="bike__column">
             <div class="bike-slider">
-              <img src="images/bike-1.jpg" class="bike-slider__item" />
-              <img src="images/bike-2.jpg" class="bike-slider__item" />
-              <img src="images/bike-3.jpg" class="bike-slider__item" />
-              <img src="images/bike-4.jpg" class="bike-slider__item" />
+
+<?php
+global $post;
+
+$myposts = get_posts([ 
+	'numberposts' => -1,
+]);
+
+if( $myposts ){
+	foreach( $myposts as $post ){
+		setup_postdata( $post );
+		?>
+         <?php the_post_thumbnail(
+            array(630, 525),
+            array(
+            'class' => 'bike-slider__item',
+            ),
+         );?>
+
+		<?php 
+	}
+}
+
+wp_reset_postdata(); 
+?>
+
+             
             </div>
             <ul class="bike__list">
               <li class="bike__list-item">
@@ -85,10 +83,10 @@
         </div>
       </div>
     </section>
-    <section class="info">
+    <section class="info" id="info">
       <div class="container">
         <div class="info__inner">
-          <img src="images/info.jpg" alt="" class="info__img" />
+          <img src="<?php bloginfo('template_url'); ?>/assets/images/info.jpg" alt="" class="info__img" />
           <div class="info__list">
             <div class="info__list-item">
               <h4 class="info__item-title">Комфорт и безопасность от HIMO</h4>
@@ -149,7 +147,7 @@
         </div>
       </div>
     </section>
-    <section class="characteristic">
+    <section class="characteristic" id="characteristic">
       <div class="container">
         <h4 class="characteristic__title">Характеристики</h4>
         <div class="characteristic__inner">
@@ -265,7 +263,7 @@
             </ul>
           </div>
           <img
-            src="images/characteristic.jpg"
+            src="<?php bloginfo('template_url'); ?>/assets/images/characteristic.jpg"
             alt=""
             class="characteristic__img"
           />
@@ -275,9 +273,9 @@
     <div class="slider">
       <div class="container">
         <div class="slider__items">
-          <img src="images/slider-1.jpg" class="slider__item" />
-          <img src="images/slider-2.jpg" class="slider__item" />
-          <img src="images/slider-3.jpg" class="slider__item" />
+          <img src="<?php bloginfo('template_url'); ?>/assets/images/slider-1.jpg" class="slider__item" />
+          <img src="<?php bloginfo('template_url'); ?>/assets/images/slider-2.jpg" class="slider__item" />
+          <img src="<?php bloginfo('template_url'); ?>/assets/images/slider-3.jpg" class="slider__item" />
         </div>
       </div>
     </div>
@@ -298,7 +296,7 @@
                 <input type="radio" class="form__input-radio" name="radio" />
                 <div class="form__bike">
                   <img
-                    src="images/bike-grey.jpg"
+                    src="<?php bloginfo('template_url'); ?>/assets/images/bike-grey.jpg"
                     alt=""
                     class="form__bike-img"
                   />
@@ -315,7 +313,7 @@
                 />
                 <div class="form__bike">
                   <img
-                    src="images/bike-white.jpg"
+                    src="<?php bloginfo('template_url'); ?>/assets/images/bike-white.jpg"
                     alt=""
                     class="form__bike-img"
                   />
@@ -328,7 +326,7 @@
                 <input type="radio" class="form__input-radio" name="radio" />
                 <div class="form__bike">
                   <img
-                    src="images/bike-red.jpg"
+                    src="<?php bloginfo('template_url'); ?>/assets/images/bike-red.jpg"
                     alt=""
                     class="form__bike-img"
                   />
@@ -342,38 +340,5 @@
         </div>
       </div>
     </section>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__inner">
-          <a href="#" class="footer__link">Политика конфиденциальности</a>
-          <div class="footer__social-list">
-            <a href="#" class="footer__social-link"
-              ><img
-                src="images/inst.svg"
-                alt="instagram"
-                class="footer__social-img"
-            /></a>
-            <a href="#" class="footer__social-link"
-              ><img
-                src="images/fb.svg"
-                alt="facebook"
-                class="footer__social-img"
-            /></a>
-          </div>
-          <div class="footer__contacts">
-            <a href="tel:+38 050 677 77 77" class="footer__contacts-link phone"
-              >+38 050 677 77 77</a
-            ><a
-              href="mailto:elektrobikeukr@gmail.com"
-              class="footer__contacts-link mail"
-              >elektrobikeukr@gmail.com</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-</html>
+
+    <?php get_footer();?>

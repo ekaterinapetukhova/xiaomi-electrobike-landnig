@@ -5,13 +5,13 @@
           <div class="footer__social-list">
             <a href="#" class="footer__social-link"
               ><img
-                src="images/inst.svg"
+                src="<?php bloginfo('template_url'); ?>/assets/images/inst.svg"
                 alt="instagram"
                 class="footer__social-img"
             /></a>
             <a href="#" class="footer__social-link"
               ><img
-                src="images/fb.svg"
+                src="<?php bloginfo('template_url'); ?>/assets/images/fb.svg"
                 alt="facebook"
                 class="footer__social-img"
             /></a>
@@ -28,8 +28,6 @@
         </div>
       </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/main.js"></script>
+    <?php wp_footer();?>
   </body>
 </html>
